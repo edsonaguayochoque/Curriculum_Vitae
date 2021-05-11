@@ -1,7 +1,10 @@
 /* ^^^^^^^^^Custoom Properties^^^^^^^^^ */
 :root {
   --first-color: #d90062;
+  --first-color:#9d0191;
+  --first-color:#16a596;
   --first-alpha-color: rgba(217, 0, 98, 0.75);
+  --first-alpha-color:rgba(22, 165, 150,0.75);
   --second-color: #14192d;
   --second-alpha-color: rgba(0, 25, 45, 0.75);
   --third-color: #501464;
@@ -181,6 +184,9 @@ progress::-webkit-progress-value {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
 
+.bg-gray-ligth{
+  background-color: var(--gray-ligth-color);
+}
 .btn {
   border-radius: 0.5rem;
   padding: 1rem;
@@ -222,6 +228,16 @@ progress::-webkit-progress-value {
   padding: 2rem 1rem;
 }
 
+.section-title{
+  border-top: thin solid var(--first-color);
+  border-bottom: thin solid var(--first-color);
+  width: 250px;
+  margin: 2rem auto;
+  padding: .5rem 1rem;
+  text-align: center;
+  color: var(--title-color);
+}
+
 /* ^^^^^^^^^ Sites Styles ^^^^^^^^^ */
 
 .header {
@@ -252,7 +268,33 @@ progress::-webkit-progress-value {
   margin-bottom: 2rem;
 }
 
+.service-card{
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card svg{
+  fill: var(--first-color);
+  margin-bottom: 1.25rem;
+}
+.fotografia{
+    width: 100%;
+    text-align: center;
+  }
 @media screen and (min-width: 768px) {
+  
+  .services > .container {
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .services .section-title{
+    grid-column: span 2 ;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -300,5 +342,13 @@ progress::-webkit-progress-value {
     grid-template-columns: repeat(3, 30%);
     justify-content: space-between;
     align-content: center;
+  }
+
+  .services > .container {
+    grid-template-columns: repeat(3,30%);
+  }
+
+  .services .section-title{
+    grid-column: span 3 ;
   }
 }
